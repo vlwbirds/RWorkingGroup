@@ -1,0 +1,20 @@
+# Workshop 1 Navigating R
+
+```{r}
+#Do some stuff
+#Without "#" symbol it will produces error because "Do some" is not a function or an assigned object
+
+5*5 #Simple calculator stuff
+```
+
+## Storing Data Objects
+
+```{r}
+x <- 24 # <- symbol assigns integer value of 24 to x
+y <- 3 # assigns 3 to y
+
+x*y # equals 72
+
+z <- x*y
+z # running this will show the value assigned to z and also =72
+```
