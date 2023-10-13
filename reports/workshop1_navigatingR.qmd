@@ -1,5 +1,7 @@
 # Workshop 1 Navigating R
 
+2023 October 13
+
 ```{r}
 #Do some stuff
 #Without "#" symbol it will produces error because "Do some" is not a function or an assigned object
@@ -19,13 +21,95 @@ z <- x*y
 z # running this will show the value assigned to z and also =72
 ```
 
-# Activity 1
+## Activity 1 - Calculating mph, mpg, etc
 
-How many miles did I drive on a road trip?
+How many miles per hour did I drive on a road trip?
+
+What was the mpg?
 
 ```{r}
 miles <- 1000
 hours <- 15
 mph <- miles/hours
 mph
+
+#Imaginary miles per gallon for car, maybe a prius
+mpg_prius <- 80
+mpg_truck <- 15
+
+#kilometers per hour conversion
+kmph <- mph*1.6
+kmph
+
+# In an imaginary view of the past
+AvgGasCost <- 3.00
+
+# gallons of gas consumed
+gal_prius <- miles/mpg_prius
+gal_truck <- miles/mpg_truck
+
+# cost of gas per gallon
+TripCost_prius <- gal_prius*AvgGasCost
+TripCost_truck <- gal_truck*AvgGasCost
+TripCost_prius 
+TripCost_truck
+
+```
+
+## Encountering Errors
+
+Many will occur overtime, but
+
+-   object 'galons' not found
+
+    -   missing an "l" in gallons
+
+-   Commas often misplaces, or other symbols such as parenthesis etc.
+
+## Vectors
+
+-   a one dimensional object
+
+-   Data Types
+
+    -   integer
+
+        -   whole numbers
+
+    -   numeric
+
+        -   numbers with decimals
+
+    -   logical
+
+        -   boolean TRUE or FALSE
+
+    -   character
+
+        -   words
+
+```{r}
+#what if we were tracking grades in a class?
+# c() is the function concatenate and combines vectors into a group, basically like a column of data in a spreadsheet
+
+grades <- c(94, 89, 100, 92) # Random grades for four students
+
+# How to find the first value in the vector?
+# use square brackets for this []
+grades[1] # pulls the first element of a vector
+grades[4] # pulls the fourth element of a vector
+grades[1:3] # pulls the first through the third vecors
+
+# We want to know the average test score
+# we use the mean() function and type grades between the parenthesis
+mean(grades)
+
+# What if we want to figure out what a function does?
+# We will put a ? before the name of the function
+# This will open up the help area in the bottom right box in RStudio
+?mean
+
+# What if we want to know the minimum and maximum values?
+min(grades)
+max(grades)
 ```
