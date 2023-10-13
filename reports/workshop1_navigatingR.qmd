@@ -18,3 +18,14 @@ x*y # equals 72
 z <- x*y
 z # running this will show the value assigned to z and also =72
 ```
+
+# Activity 1
+
+How many miles did I drive on a road trip?
+
+```{r}
+miles <- 1000
+hours <- 15
+mph <- miles/hours
+mph
+```
