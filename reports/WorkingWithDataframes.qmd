@@ -71,6 +71,7 @@ view(working_data)
 
 ```{r}
 install.packages("ggplot2") # ggplot is a great tool for making charts and graphs that is a little better than the base level R plot. This kind a function only needs to be called once. It will download the package to your computer.
+
 library(ggplot2) # Once a package is downloaded, this library(PACKAGE) function needs to be run everytime you want to use a specific package
 ```
 

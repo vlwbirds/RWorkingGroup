@@ -113,3 +113,7 @@ mean(grades)
 min(grades)
 max(grades)
 ```
+
+```{r}
+60*60
+```
