@@ -4,16 +4,78 @@ format: html
 editor: visual
 ---
 
-# Working with dataframes
+# Working with Dataframes
 
 October 20, 2023
 
 ```{r}
-library(tidyverse)
-library(here)
-working_data <- read_csv(here("data/example_data.csv"))
+library(tidyverse) # loads several useful, common packages
+library(here) # cleaner and more reproducable than setwd()
+working_data <- read_csv(here("data/example_data.csv")) #notice that there is an underscore "_" instead of a period "." in read_csv. This is because it's a tidyverse function, and displays the csv as a tibble.
 working_data
 
+?str() # calling ? at the beginning of a function will open the help information in the help window
+str(working_data) # gives an overview of the data: size of the data frame, columns headings, vector type, 
 
+summary(working_data) # another way to review a dataframe. It gives more information such as mean median and mode
+
+view(working_data) # opens the dataframe in a new window as a spreadsheet format
+
+tail(working_data) # returns the last components of a dataframe
+
+working_data$snails # the "$" symbol here lets us select the snails column
+select(working_data, snails) # this is another way to select data. The syntax is select(DATAFRAME, WHATTOSELECT)
+
+#These next ones help to numerically understand what the data has, by adding a count of the different sites
+working_data$site <- factor(working_data$site)
+summary(working_data)
+
+#This block creates factors for tide.height and lets us know how many are low and high
+working_data$tide.height <- factor(working_data$tide.height, levels = c("low", "high"))
+summary(working_data)
+
+working_data[1,3] # DATAFRAME[ROW,COLUMN]
+
+working_data[18,"snails"] #gives the value in the snails column from the 18th row
+
+working_data$site=="A" # TRUE or FALSE, Yes or No is the data in each row of the dataframe equal to A based on the site column
+
+working_data[working_data$tide.height=="low",] #Where is the tide height low? COMMA IS ESSENTIAL
+
+```
+
+## Try on your own
+
+Pull out all observations where mussels is less than 13, and save it as a dataframe
+
+```{r}
+
+```
+
+## Making New Columns
+
+```{r}
+working_data$LogMus <- log(working_data$mussels) # creates column in dataframe with the log of mussel density
+
+#Adding a Total density column: snails + mussels + barnacles
+working_data$TotalDens <- working_data$snails + 
+                                working_data$mussels + 
+                                working_data$barnacles
+  
+view(working_data)
+
+
+```
+
+## Installing Packages
+
+```{r}
+install.packages("ggplot2") # ggplot is a great tool for making charts and graphs that is a little better than the base level R plot. This kind a function only needs to be called once. It will download the package to your computer.
+library(ggplot2) # Once a package is downloaded, this library(PACKAGE) function needs to be run everytime you want to use a specific package
+```
+
+## Plotting
+
+```{r}
 
 ```
