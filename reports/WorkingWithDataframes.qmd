@@ -1,0 +1,19 @@
+---
+title: "WorkingWithDataFrames"
+format: html
+editor: visual
+---
+
+# Working with dataframes
+
+October 20, 2023
+
+```{r}
+library(tidyverse)
+library(here)
+working_data <- read_csv(here("data/example_data.csv"))
+working_data
+
+
+
+```
