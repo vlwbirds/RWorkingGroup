@@ -1,0 +1,35 @@
+---
+title: "ggplot"
+format: html
+editor: visual
+---
+
+# ggplot2
+
+A package that elegantly displays plots
+
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+
+penguin_data <- penguins
+penguins
+
+```
+
+## ggplot syntax
+
+-   data frame has to be defined with `data = dataframe`
+
+-   next the aesthetics must be defined
+
+    -   determine the coulumns for x axis and y axis using `aes(x = column1, y = column2)`
+
+    -   add color into the mix within the `aes()` function by adding `color = reference_column`
+
+```{r}
+
+ggplot(data = penguin_data, aes(x = bill_length_mm, y = bill_depth_mm,
+                                color = species)) +
+  geom_point()
+```
